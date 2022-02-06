@@ -1,5 +1,7 @@
+import { Navigation } from './router'
+
 const App = () => {
-   return <>app</>
+   return <Navigation />
 }
 
 export default App
