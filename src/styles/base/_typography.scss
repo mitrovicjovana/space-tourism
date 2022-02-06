@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+
+html {
+   font-size: 100%;
+}
+
+h1 {
+   font-size: $heading-1-size;
+}
+
+h2 {
+   font-size: $heading-2-size;
+}
+
+h3 {
+   font-size: $heading-3-size;
+}
+
+h4 {
+   font-size: $heading-4-size;
+}
+
+h5 {
+   font-size: $heading-5-size;
+}
+
+h6 {
+   font-size: $heading-6-size;
+}
+
+a,
+a:visited,
+a:active {
+   text-decoration: none;
+}
+
+p,
+a {
+   font-size: $regular-font-size;
+}
