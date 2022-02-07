@@ -1,15 +1,38 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 
 html {
    font-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+   font-weight: 400;
+}
+
 h1 {
-   font-size: $heading-1-size;
+   font-family: $bellefair;
+   font-size: rem(80px);
+   line-height: rem(100px);
+
+   @include breakpoint(small) {
+      font-size: rem(150px);
+      line-height: rem(150px);
+   }
+   @include breakpoint(medium) {
+      line-height: rem(172px);
+   }
 }
 
 h2 {
-   font-size: $heading-2-size;
 }
 
 h3 {
@@ -17,11 +40,34 @@ h3 {
 }
 
 h4 {
-   font-size: $heading-4-size;
+   font-family: $bellefair;
+   font-size: rem(20px);
+   line-height: rem(23px);
+   letter-spacing: rem(1.25px);
+
+   @include breakpoint(small) {
+      font-size: rem(32px);
+      line-height: rem(37px);
+      letter-spacing: rem(2px);
+   }
 }
 
 h5 {
-   font-size: $heading-5-size;
+   font-family: $barlow;
+   font-size: rem(16px);
+   line-height: rem(19.2px);
+   letter-spacing: rem(2.7px);
+
+   @include breakpoint(small) {
+      font-size: rem(20px);
+      line-height: rem(24px);
+      letter-spacing: rem(3.375px);
+   }
+   @include breakpoint(medium) {
+      font-size: rem(28px);
+      line-height: rem(33.6px);
+      letter-spacing: rem(4.725px);
+   }
 }
 
 h6 {
@@ -34,7 +80,17 @@ a:active {
    text-decoration: none;
 }
 
-p,
-a {
-   font-size: $regular-font-size;
+p {
+   font-family: $barlow;
+   font-size: rem(15px);
+   line-height: rem(25px);
+
+   @include breakpoint(small) {
+      font-size: rem(16px);
+      line-height: rem(28px);
+   }
+   @include breakpoint(medium) {
+      font-size: rem(18px);
+      line-height: rem(32.6px);
+   }
 }

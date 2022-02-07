@@ -4,33 +4,29 @@
 
 // Colors
 $dark-color: #0b0d17;
-$medium-color: #d0d6f9;
-$light-color: #fffffe;
+$light-color: #d0d6f9;
+$white-color: #fffffe;
 
 // Fonts
 $bellefair: 'Bellefair', serif;
 $barlow: 'Barlow Condensed', sans-serif;
 
 // Font sizes
-$regular-font-size: rem(16px);
-$heading-1-size: rem(150px);
 $heading-2-size: rem(100px);
 $heading-3-size: rem(56px);
-$heading-4-size: rem(32px);
-$heading-5-size: rem(28px);
 $heading-6-size: rem(14px);
 
 // Breakpoints
 $breakpoints-up: (
-   'small': rem(420px),
-   'medium': rem(730px),
+   'small': rem(480px),
+   'medium': rem(860px),
    'large': rem(1024px),
    'xlarge': rem(1400px),
 );
 
 $breakpoints-down: (
-   'xsmall': rem(419px),
-   'small': rem(729px),
+   'xsmall': rem(479px),
+   'small': rem(859px),
    'medium': rem(1023px),
    'large': rem(1339px),
 );

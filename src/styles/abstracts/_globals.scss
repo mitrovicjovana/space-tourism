@@ -1,26 +1,33 @@
 @use './mixins' as *;
 @use './functions' as *;
+@use './variables' as *;
 
 .wrapper {
    margin: 0 auto;
-   width: 94%;
+   padding-top: $header-height;
+   width: 92%;
    min-width: rem(280px);
-   max-width: rem(600px);
+   max-width: rem(420px);
+   height: 100%;
+
+   @include breakpoint(small) {
+      width: 90%;
+      min-width: rem(420px);
+      max-width: rem(800px);
+   }
 
    @include breakpoint(medium) {
-      min-width: rem(600px);
+      min-width: rem(800px);
       max-width: rem(970px);
    }
 
    @include breakpoint(large) {
-      width: 92%;
-      min-width: rem(600px);
-      max-width: rem(970px);
-   }
-
-   @include breakpoint(large) {
-      width: 92%;
-      min-width: rem(980px);
+      width: 86%;
+      min-width: rem(970px);
       max-width: rem(1200px);
+   }
+
+   @include breakpoint(xlarge) {
+      max-width: rem(1300px);
    }
 }

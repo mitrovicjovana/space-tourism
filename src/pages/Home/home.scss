@@ -12,7 +12,110 @@
       background-image: url('../../assets/images/home/background-home-tablet.jpg');
    }
 
-   @include breakpoint(small) {
+   @include breakpoint(large) {
       background-image: url('../../assets/images/home/background-home-desktop.jpg');
+   }
+
+   &__info {
+      margin-top: rem(36px);
+
+      @include breakpoint(small) {
+         width: rem(450px);
+      }
+   }
+
+   &__heading {
+      text-transform: uppercase;
+      text-align: center;
+
+      @include breakpoint(large) {
+         text-align: start;
+      }
+
+      &--h5 {
+         margin-bottom: rem(16px);
+         font-family: $barlow;
+         color: $light-color;
+
+         @include breakpoint(small) {
+            margin-bottom: rem(24px);
+         }
+      }
+      &--h1 {
+         margin-bottom: rem(16px);
+         font-family: $bellefair;
+         color: $white-color;
+
+         @include breakpoint(small) {
+            margin-bottom: rem(24px);
+         }
+      }
+   }
+
+   &__text {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      color: $light-color;
+
+      @include breakpoint(large) {
+         margin: 0;
+         text-align: start;
+      }
+   }
+
+   &__explore {
+      display: flex;
+      flex: 1;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: rem(36px);
+
+      @include breakpoint(large) {
+         height: 100%;
+         justify-content: flex-end;
+      }
+
+      &--btn {
+         width: rem(150px);
+         height: rem(150px);
+         position: relative;
+         border: none;
+         border-radius: 50%;
+         background-color: $white-color;
+         cursor: pointer;
+         text-transform: uppercase;
+         outline-color: rgba($color: $white-color, $alpha: 0.3);
+
+         @include breakpoint(small) {
+            width: rem(242px);
+            height: rem(242px);
+         }
+
+         @include breakpoint(large) {
+            width: rem(274px);
+            height: rem(274px);
+         }
+
+         &:hover {
+            outline: solid rgba($color: $white-color, $alpha: 0.3) rem(48px);
+            transition: outline ease-in 0.7s;
+         }
+      }
+   }
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   @include breakpoint(large) {
+      flex-direction: row;
+      padding-bottom: min(8%, rem(42px));
+   }
+
+   @include breakpoint(xlarge) {
+      padding-bottom: 15%;
    }
 }
