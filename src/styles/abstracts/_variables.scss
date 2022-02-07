@@ -22,13 +22,18 @@ $heading-6-size: rem(14px);
 
 // Breakpoints
 $breakpoints-up: (
-   'medium': rem(640px),
+   'small': rem(420px),
+   'medium': rem(730px),
    'large': rem(1024px),
    'xlarge': rem(1400px),
 );
 
 $breakpoints-down: (
-   'small': rem(639px),
+   'xsmall': rem(419px),
+   'small': rem(729px),
    'medium': rem(1023px),
    'large': rem(1339px),
 );
+
+// Misc
+$header-height: rem(96px);

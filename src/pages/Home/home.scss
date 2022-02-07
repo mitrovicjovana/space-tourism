@@ -1,0 +1,18 @@
+@use '../../styles/index.scss' as *;
+
+.home {
+   width: 100%;
+   height: 100vh;
+   background-image: url('../../assets/images/home/background-home-mobile.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/home/background-home-tablet.jpg');
+   }
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/home/background-home-desktop.jpg');
+   }
+}

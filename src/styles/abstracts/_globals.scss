@@ -1,0 +1,26 @@
+@use './mixins' as *;
+@use './functions' as *;
+
+.wrapper {
+   margin: 0 auto;
+   width: 94%;
+   min-width: rem(280px);
+   max-width: rem(600px);
+
+   @include breakpoint(medium) {
+      min-width: rem(600px);
+      max-width: rem(970px);
+   }
+
+   @include breakpoint(large) {
+      width: 92%;
+      min-width: rem(600px);
+      max-width: rem(970px);
+   }
+
+   @include breakpoint(large) {
+      width: 92%;
+      min-width: rem(980px);
+      max-width: rem(1200px);
+   }
+}
