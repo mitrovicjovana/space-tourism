@@ -22,6 +22,14 @@
       @include breakpoint(small) {
          width: rem(450px);
       }
+
+      @include breakpoint(large) {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         height: 100%;
+         margin-bottom: rem(16px);
+      }
    }
 
    &__heading {
@@ -69,7 +77,6 @@
       flex: 1;
       align-items: flex-end;
       justify-content: center;
-      margin-bottom: rem(36px);
 
       @include breakpoint(large) {
          height: 100%;
@@ -87,19 +94,33 @@
          text-transform: uppercase;
          outline-color: rgba($color: $white-color, $alpha: 0.3);
 
+         &:hover {
+            outline: solid rgba($color: $white-color, $alpha: 0.3) rem(24px);
+            transition: outline ease-in 0.7s;
+         }
+
          @include breakpoint(small) {
             width: rem(242px);
             height: rem(242px);
+
+            &:hover {
+               outline: solid rgba($color: $white-color, $alpha: 0.3) rem(36px);
+               transition: outline ease-in 0.7s;
+            }
+
+            & > h4 {
+               cursor: inherit;
+            }
          }
 
          @include breakpoint(large) {
             width: rem(274px);
             height: rem(274px);
-         }
 
-         &:hover {
-            outline: solid rgba($color: $white-color, $alpha: 0.3) rem(48px);
-            transition: outline ease-in 0.7s;
+            &:hover {
+               outline: solid rgba($color: $white-color, $alpha: 0.3) rem(48px);
+               transition: outline ease-in 0.7s;
+            }
          }
       }
    }
@@ -112,10 +133,5 @@
 
    @include breakpoint(large) {
       flex-direction: row;
-      padding-bottom: min(8%, rem(42px));
-   }
-
-   @include breakpoint(xlarge) {
-      padding-bottom: 15%;
    }
 }

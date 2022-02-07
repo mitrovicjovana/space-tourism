@@ -1,0 +1,14 @@
+@use '../../styles/index.scss' as *;
+
+.header {
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: $header-height;
+   background-color: rgba($color: #fff, $alpha: 0.2);
+
+   & > a {
+      color: white;
+      margin: 20px;
+   }
+}

@@ -4,7 +4,8 @@
 
 .wrapper {
    margin: 0 auto;
-   padding-top: $header-height;
+   padding-top: calc($header-height + 3vh);
+   padding-bottom: 3vh;
    width: 92%;
    min-width: rem(280px);
    max-width: rem(420px);
@@ -14,20 +15,28 @@
       width: 90%;
       min-width: rem(420px);
       max-width: rem(800px);
+      padding-top: calc($header-height + 4vh);
+      padding-bottom: 4vh;
    }
 
    @include breakpoint(medium) {
       min-width: rem(800px);
       max-width: rem(970px);
+      padding-top: calc($header-height + 5vh);
+      padding-bottom: 5vh;
    }
 
    @include breakpoint(large) {
       width: 86%;
       min-width: rem(970px);
       max-width: rem(1200px);
+      padding-top: calc($header-height + 15vh);
+      padding-bottom: 15vh;
    }
 
    @include breakpoint(xlarge) {
       max-width: rem(1300px);
+      padding-top: calc($header-height + 20vh);
+      padding-bottom: 20vh;
    }
 }
