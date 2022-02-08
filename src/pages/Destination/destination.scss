@@ -55,6 +55,7 @@
       display: flex;
       justify-content: space-between;
       width: 60%;
+      min-width: rem(186px);
       max-width: rem(237px);
 
       @include breakpoint(small) {
