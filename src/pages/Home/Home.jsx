@@ -5,7 +5,9 @@ const Home = () => {
       <section className="home">
          <div className="wrapper">
             <div className="home__info">
-               <h5 className="home__heading home__heading--h5">So, you want to travel to</h5>
+               <h5 className="home__heading home__heading--h5 heading">
+                  So, you want to travel to
+               </h5>
                <h1 className="home__heading home__heading--h1">Space</h1>
                <p className="home__text">
                   Let’s face it; if you want to go to space, you might as well genuinely go to outer

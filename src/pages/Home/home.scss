@@ -16,6 +16,12 @@
       background-image: url('../../assets/images/home/background-home-desktop.jpg');
    }
 
+   & .wrapper {
+      @include breakpoint(large) {
+         flex-direction: row;
+      }
+   }
+
    &__info {
       margin-top: rem(36px);
 
@@ -104,7 +110,7 @@
             height: rem(242px);
 
             &:hover {
-               outline: solid rgba($color: $white-color, $alpha: 0.3) rem(36px);
+               outline: solid $white-alpha-color rem(36px);
                transition: outline ease-in 0.7s;
             }
 
@@ -118,20 +124,10 @@
             height: rem(274px);
 
             &:hover {
-               outline: solid rgba($color: $white-color, $alpha: 0.3) rem(48px);
+               outline: solid $white-alpha-color rem(48px);
                transition: outline ease-in 0.7s;
             }
          }
       }
-   }
-}
-
-.wrapper {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-
-   @include breakpoint(large) {
-      flex-direction: row;
    }
 }

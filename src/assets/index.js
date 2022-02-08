@@ -4,10 +4,10 @@ export { default as iconHamburger } from './icons/icon-hamburger.svg'
 export { default as logo } from './icons/logo.svg'
 
 // Destination
-export { default as europaImage } from './images/crew/image-europa.png'
-export { default as marsImage } from './images/crew/image-mars.png'
-export { default as moonImage } from './images/crew/image-moon.png'
-export { default as titanImage } from './images/crew/image-titan.png'
+export { default as europaImage } from './images/destination/image-europa.png'
+export { default as marsImage } from './images/destination/image-mars.png'
+export { default as moonImage } from './images/destination/image-moon.png'
+export { default as titanImage } from './images/destination/image-titan.png'
 
 // Crew
 export { default as anoushehAnsariImage } from './images/crew/image-anousheh-ansari.png'
@@ -16,9 +16,9 @@ export { default as markShuttleworthImage } from './images/crew/image-mark-shutt
 export { default as victorGloverImage } from './images/crew/image-victor-glover.png'
 
 // Technology
-export { default as lauchVehicleLandscapeImage } from './images/crew/image-lauch-vehicle-landscape.png'
-export { default as lauchVehiclePortraitImage } from './images/crew/image-lauch-vehicle-portrait.png'
-export { default as spaceCapsuleLandscapeImage } from './images/crew/image-space-capsule-landscape.png'
-export { default as spaceCapsulePortraitImage } from './images/crew/image-space-capsule-portrait.png'
-export { default as spaceportLandscapeImage } from './images/crew/image-spaceport-landscape.png'
-export { default as spaceportPortraitImage } from './images/crew/image-spaceport-portrait.png'
+export { default as lauchVehicleLandscapeImage } from './images/technology/image-launch-vehicle-landscape.jpg'
+export { default as lauchVehiclePortraitImage } from './images/technology/image-launch-vehicle-portrait.jpg'
+export { default as spaceCapsuleLandscapeImage } from './images/technology/image-space-capsule-landscape.jpg'
+export { default as spaceCapsulePortraitImage } from './images/technology/image-space-capsule-portrait.jpg'
+export { default as spaceportLandscapeImage } from './images/technology/image-spaceport-landscape.jpg'
+export { default as spaceportPortraitImage } from './images/technology/image-spaceport-portrait.jpg'

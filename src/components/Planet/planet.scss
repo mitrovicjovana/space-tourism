@@ -1,0 +1,113 @@
+@use '../../styles/index.scss' as *;
+
+.planet {
+   display: none;
+
+   &.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      @include breakpoint(large) {
+         flex-direction: row;
+         gap: min(10vw, rem(196px));
+      }
+   }
+
+   &__img {
+      width: rem(170px);
+      height: rem(170px);
+      margin-bottom: rem(26px);
+      object-fit: contain;
+
+      @include breakpoint(small) {
+         width: rem(300px);
+         height: rem(300px);
+         margin-bottom: rem(53px);
+      }
+
+      @include breakpoint(large) {
+         width: rem(445px);
+         height: rem(445px);
+         margin-bottom: 0;
+      }
+   }
+
+   &__description {
+      @include breakpoint(small) {
+         max-width: rem(753px);
+      }
+
+      @include breakpoint(large) {
+         max-width: (445px);
+      }
+
+      &--heading {
+         text-align: center;
+         text-transform: uppercase;
+         color: $white-color;
+
+         @include breakpoint(small) {
+            margin-bottom: rem(8px);
+         }
+
+         @include breakpoint(large) {
+            margin-bottom: rem(14px);
+            text-align: start;
+         }
+      }
+
+      &--text {
+         margin-bottom: rem(32px);
+         text-align: center;
+         color: $light-color;
+
+         @include breakpoint(small) {
+            margin-bottom: rem(50px);
+         }
+
+         @include breakpoint(large) {
+            text-align: start;
+         }
+      }
+   }
+
+   &__details {
+      padding-top: rem(32px);
+      border-top: solid $white-alpha-color rem(1px);
+
+      @include breakpoint(small) {
+         display: flex;
+         justify-content: space-evenly;
+      }
+
+      &--section {
+         margin-bottom: rem(32px);
+         text-transform: uppercase;
+
+         @include breakpoint(large) {
+            flex: 1;
+         }
+
+         & > h6 {
+            margin-bottom: rem(12px);
+            text-align: center;
+            color: $light-color;
+
+            @include breakpoint(large) {
+               text-align: start;
+            }
+         }
+
+         & > h5 {
+            text-align: center;
+            color: $white-color;
+
+            @include breakpoint(large) {
+               text-align: start;
+            }
+         }
+      }
+   }
+}

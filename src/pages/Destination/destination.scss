@@ -1,0 +1,82 @@
+@use '../../styles/index.scss' as *;
+
+.destination {
+   width: 100%;
+   background-image: url('../../assets/images/destination/background-destination-mobile.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/destination/background-destination-tablet.jpg');
+   }
+
+   @include breakpoint(large) {
+      background-image: url('../../assets/images/destination/background-destination-desktop.jpg');
+   }
+
+   & .wrapper {
+      min-height: 100vh;
+   }
+
+   &__heading {
+      margin-bottom: rem(32px);
+      width: 100%;
+      text-transform: uppercase;
+      color: $white-color;
+      text-align: center;
+
+      @include breakpoint(small) {
+         margin-bottom: rem(60px);
+         text-align: start;
+      }
+
+      @include breakpoint(large) {
+         margin-bottom: rem(64px);
+      }
+
+      & > span {
+         margin-right: rem(18px);
+         color: $white-alpha-color;
+
+         @include breakpoint(small) {
+            margin-right: rem(19px);
+         }
+
+         @include breakpoint(large) {
+            margin-right: rem(28px);
+         }
+      }
+   }
+
+   &__list {
+      margin-bottom: rem(20px);
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      max-width: rem(237px);
+
+      @include breakpoint(small) {
+         margin-bottom: rem(32px);
+         max-width: rem(295px);
+      }
+
+      @include breakpoint(large) {
+         margin-bottom: rem(37px);
+         margin-inline: unset;
+      }
+   }
+
+   &__list-item {
+      border: none;
+      background-color: transparent;
+      text-transform: uppercase;
+      color: $light-color;
+      cursor: pointer;
+
+      &.active {
+         color: $white-color;
+      }
+   }
+}

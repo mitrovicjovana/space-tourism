@@ -22,17 +22,31 @@ h1 {
    font-family: $bellefair;
    font-size: rem(80px);
    line-height: rem(100px);
+   font-weight: 400;
 
    @include breakpoint(small) {
       font-size: rem(150px);
       line-height: rem(150px);
    }
-   @include breakpoint(medium) {
+   @include breakpoint(large) {
       line-height: rem(172px);
    }
 }
 
 h2 {
+   font-family: $bellefair;
+   font-size: rem(56px);
+   line-height: rem(64px);
+   font-weight: 400;
+
+   @include breakpoint(small) {
+      font-size: rem(80px);
+      line-height: rem(92px);
+   }
+   @include breakpoint(large) {
+      font-size: rem(100px);
+      line-height: rem(115px);
+   }
 }
 
 h3 {
@@ -44,6 +58,7 @@ h4 {
    font-size: rem(20px);
    line-height: rem(23px);
    letter-spacing: rem(1.25px);
+   font-weight: 400;
 
    @include breakpoint(small) {
       font-size: rem(32px);
@@ -53,25 +68,39 @@ h4 {
 }
 
 h5 {
-   font-family: $barlow;
-   font-size: rem(16px);
-   line-height: rem(19.2px);
-   letter-spacing: rem(2.7px);
+   &.heading {
+      font-size: rem(16px);
+      font-family: $barlow;
+      line-height: rem(19.2px);
+      letter-spacing: rem(2.7px);
+      font-weight: 300;
 
-   @include breakpoint(small) {
-      font-size: rem(20px);
-      line-height: rem(24px);
-      letter-spacing: rem(3.375px);
+      @include breakpoint(small) {
+         font-size: rem(20px);
+         line-height: rem(24px);
+         letter-spacing: rem(3.375px);
+      }
+      @include breakpoint(large) {
+         font-size: rem(28px);
+         line-height: rem(33.6px);
+         letter-spacing: rem(4.725px);
+      }
    }
-   @include breakpoint(medium) {
+
+   &.subheading {
+      font-family: $bellefair;
       font-size: rem(28px);
-      line-height: rem(33.6px);
-      letter-spacing: rem(4.725px);
+      line-height: rem(32px);
+      font-weight: 400;
    }
 }
 
 h6 {
-   font-size: $heading-6-size;
+   font-family: $barlow;
+   font-size: rem(14px);
+   line-height: rem(17px);
+   letter-spacing: rem(2.365px);
+   font-weight: 300;
 }
 
 a,
@@ -84,13 +113,28 @@ p {
    font-family: $barlow;
    font-size: rem(15px);
    line-height: rem(25px);
+   font-weight: 300;
 
    @include breakpoint(small) {
       font-size: rem(16px);
       line-height: rem(28px);
    }
-   @include breakpoint(medium) {
+   @include breakpoint(large) {
       font-size: rem(18px);
       line-height: rem(32.6px);
+   }
+}
+
+.nav-item {
+   font-family: $barlow;
+   font-size: rem(14px);
+   line-height: rem(16.8px);
+   letter-spacing: rem(2.3625px);
+   font-weight: 300;
+
+   @include breakpoint(small) {
+      font-size: rem(16px);
+      line-height: rem(19.2px);
+      letter-spacing: rem(2.7px);
    }
 }
