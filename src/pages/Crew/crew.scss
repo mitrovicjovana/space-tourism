@@ -1,0 +1,52 @@
+@use '../../styles/index.scss' as *;
+
+.crew {
+   width: 100%;
+   background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/crew/background-crew-tablet.jpg');
+   }
+
+   @include breakpoint(large) {
+      background-image: url('../../assets/images/crew/background-crew-desktop.jpg');
+   }
+
+   & .wrapper {
+      @include breakpoint(small) {
+         padding-bottom: 0;
+      }
+
+      @include breakpoint(large) {
+         position: relative;
+         height: 100vh;
+      }
+   }
+
+   & .dot {
+      border: none;
+      border-radius: 50%;
+      width: rem(10px);
+      height: rem(10px);
+      margin-right: rem(16px);
+      background-color: $white-alpha17-color;
+      cursor: pointer;
+
+      &:last-child {
+         margin-right: unset;
+      }
+
+      @include breakpoint(large) {
+         width: rem(15px);
+         height: rem(15px);
+         margin-right: rem(24px);
+      }
+
+      &.active {
+         background-color: $white-color;
+      }
+   }
+}

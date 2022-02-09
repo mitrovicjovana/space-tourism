@@ -14,37 +14,35 @@ const Destination = () => {
    return (
       <section className="destination">
          <div className="wrapper">
-            <h5 className="destination__heading heading">
+            <h5 className="page-heading heading">
                <span>01</span>
                Pick your destination
             </h5>
-            <div className="destination__content">
-               {destinations.map(({ name, image, description, distance, travel }, index) => (
-                  <Planet
-                     key={index}
-                     name={name}
-                     image={image}
-                     description={description}
-                     distance={distance}
-                     travel={travel}
-                     isActive={index === activeTab}
-                  >
-                     <div className="destination__list">
-                        {destinations.map(({ name }, index) => (
-                           <button
-                              key={index}
-                              className={`destination__list-item nav-item${
-                                 index === activeTab ? ' active' : ''
-                              }`}
-                              onClick={() => changeActiveTab(index)}
-                           >
-                              {name}
-                           </button>
-                        ))}
-                     </div>
-                  </Planet>
-               ))}
-            </div>
+            {destinations.map(({ name, image, description, distance, travel }, index) => (
+               <Planet
+                  key={index}
+                  name={name}
+                  image={image}
+                  description={description}
+                  distance={distance}
+                  travel={travel}
+                  isActive={index === activeTab}
+               >
+                  <div className="destination__list">
+                     {destinations.map(({ name }, index) => (
+                        <button
+                           key={index}
+                           className={`destination__list-item nav-item${
+                              index === activeTab ? ' active' : ''
+                           }`}
+                           onClick={() => changeActiveTab(index)}
+                        >
+                           {name}
+                        </button>
+                     ))}
+                  </div>
+               </Planet>
+            ))}
          </div>
       </section>
    )

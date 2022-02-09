@@ -13,7 +13,7 @@
    width: 92%;
    min-width: rem(270px);
    max-width: rem(420px);
-   height: 100%;
+   min-height: 100vh;
 
    @include breakpoint(small) {
       width: 90%;
@@ -31,7 +31,7 @@
    }
 
    @include breakpoint(large) {
-      width: 86%;
+      width: 88%;
       min-width: rem(970px);
       max-width: rem(1200px);
       padding-top: calc($header-height + 8vh);
@@ -39,8 +39,38 @@
    }
 
    @include breakpoint(xlarge) {
-      max-width: rem(1300px);
+      max-width: rem(1400px);
       padding-top: calc($header-height + 10vh);
       padding-bottom: 10vh;
+   }
+}
+
+.page-heading {
+   margin-bottom: rem(32px);
+   width: 100%;
+   text-transform: uppercase;
+   color: $white-color;
+   text-align: center;
+
+   @include breakpoint(small) {
+      margin-bottom: rem(60px);
+      text-align: start;
+   }
+
+   @include breakpoint(large) {
+      margin-bottom: rem(64px);
+   }
+
+   & > span {
+      margin-right: rem(18px);
+      color: $white-alpha25-color;
+
+      @include breakpoint(small) {
+         margin-right: rem(19px);
+      }
+
+      @include breakpoint(large) {
+         margin-right: rem(28px);
+      }
    }
 }

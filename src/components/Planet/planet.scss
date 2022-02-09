@@ -11,7 +11,7 @@
 
       @include breakpoint(large) {
          flex-direction: row;
-         gap: min(10vw, rem(196px));
+         justify-content: space-evenly;
       }
    }
 
@@ -75,7 +75,7 @@
 
    &__details {
       padding-top: rem(32px);
-      border-top: solid $white-alpha-color rem(1px);
+      border-top: solid $white-alpha25-color rem(1px);
 
       @include breakpoint(small) {
          display: flex;

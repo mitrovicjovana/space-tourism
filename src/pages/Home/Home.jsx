@@ -22,7 +22,7 @@ const Home = () => {
                      console.log('explore')
                   }}
                >
-                  <h4>Explore</h4>
+                  Explore
                </button>
             </div>
          </div>
