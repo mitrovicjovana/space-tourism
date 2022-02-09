@@ -1,6 +1,14 @@
+import { Spaceship } from '../../components'
+import './technology.scss'
+
 const Technology = () => {
    return (
-      <div style={{ width: '100%', height: '100vh', backgroundColor: 'tomato' }}>technology</div>
+      <section className="technology">
+         <div style={{ minHeight: '100vh' }}>
+            <div className="wrapper"></div>
+            <Spaceship />
+         </div>
+      </section>
    )
 }
 

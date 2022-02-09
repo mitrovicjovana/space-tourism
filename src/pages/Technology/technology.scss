@@ -1,0 +1,22 @@
+@use '../../styles/index.scss' as *;
+
+.technology {
+   width: 100%;
+   background-image: url('../../assets/images/technology/background-technology-mobile.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/technology/background-technology-tablet.jpg');
+   }
+
+   @include breakpoint(large) {
+      background-image: url('../../assets/images/technology/background-technology-desktop.jpg');
+   }
+
+   & .wrapper {
+      min-height: unset;
+      padding-bottom: 0;
+   }
+}
