@@ -1,0 +1,28 @@
+@use '../../styles/index.scss' as *;
+
+.crew {
+   width: 100%;
+   background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @include breakpoint(small) {
+      background-image: url('../../assets/images/crew/background-crew-tablet.jpg');
+   }
+
+   @include breakpoint(large) {
+      background-image: url('../../assets/images/crew/background-crew-desktop.jpg');
+   }
+
+   & .wrapper {
+      @include breakpoint(small) {
+         padding-bottom: 0;
+      }
+
+      @include breakpoint(large) {
+         position: relative;
+         height: 100vh;
+      }
+   }
+}

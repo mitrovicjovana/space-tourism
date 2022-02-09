@@ -50,20 +50,36 @@ h2 {
 }
 
 h3 {
-   font-size: $heading-3-size;
+   font-family: $bellefair;
+   font-size: rem(24px);
+   line-height: rem(28px);
+   font-weight: 400;
+
+   @include breakpoint(small) {
+      font-size: rem(40px);
+      line-height: rem(46px);
+   }
+
+   @include breakpoint(large) {
+      font-size: rem(56px);
+      line-height: rem(64px);
+   }
 }
 
 h4 {
    font-family: $bellefair;
-   font-size: rem(20px);
-   line-height: rem(23px);
-   letter-spacing: rem(1.25px);
+   font-size: rem(16px);
+   line-height: rem(18px);
    font-weight: 400;
 
    @include breakpoint(small) {
+      font-size: rem(24px);
+      line-height: rem(28px);
+   }
+
+   @include breakpoint(large) {
       font-size: rem(32px);
       line-height: rem(37px);
-      letter-spacing: rem(2px);
    }
 }
 

@@ -20,6 +20,10 @@
       @include breakpoint(large) {
          flex-direction: row;
       }
+
+      @include breakpoint(xlarge) {
+         padding-bottom: 18vh;
+      }
    }
 
    &__info {
@@ -96,26 +100,30 @@
          border: none;
          border-radius: 50%;
          background-color: $white-color;
+         outline-color: $white-alpha25-color;
          cursor: pointer;
          text-transform: uppercase;
-         outline-color: rgba($color: $white-color, $alpha: 0.3);
+         font-family: $bellefair;
+         font-size: rem(20px);
+         line-height: rem(23px);
+         letter-spacing: rem(1.25px);
+         font-weight: 400;
 
          &:hover {
-            outline: solid rgba($color: $white-color, $alpha: 0.3) rem(24px);
+            outline: solid $white-alpha25-color rem(24px);
             transition: outline ease-in 0.7s;
          }
 
          @include breakpoint(small) {
             width: rem(242px);
             height: rem(242px);
+            font-size: rem(32px);
+            line-height: rem(37px);
+            letter-spacing: rem(2px);
 
             &:hover {
-               outline: solid $white-alpha-color rem(36px);
+               outline: solid $white-alpha25-color rem(36px);
                transition: outline ease-in 0.7s;
-            }
-
-            & > h4 {
-               cursor: inherit;
             }
          }
 
@@ -124,7 +132,7 @@
             height: rem(274px);
 
             &:hover {
-               outline: solid $white-alpha-color rem(48px);
+               outline: solid $white-alpha25-color rem(48px);
                transition: outline ease-in 0.7s;
             }
          }

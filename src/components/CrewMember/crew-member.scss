@@ -1,0 +1,123 @@
+@use '../../styles/index.scss' as *;
+
+.member {
+   display: flex;
+   flex-direction: column;
+
+   @include breakpoint(large) {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+   }
+
+   &__details {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: rem(32px);
+      border-top: solid $white-alpha25-color rem(1px);
+
+      @include breakpoint(small) {
+         order: unset;
+         max-width: rem(462px);
+         border: none;
+      }
+
+      @include breakpoint(large) {
+         align-items: flex-start;
+         justify-content: center;
+         max-width: max-content;
+      }
+   }
+
+   &__info {
+      order: 2;
+
+      @include breakpoint(small) {
+         order: unset;
+      }
+   }
+
+   &__role {
+      margin-bottom: rem(8px);
+      text-align: center;
+      text-transform: uppercase;
+      color: $white-alpha5-color;
+
+      @include breakpoint(large) {
+         margin-bottom: rem(16px);
+
+         text-align: start;
+      }
+   }
+
+   &__name {
+      margin-bottom: rem(16px);
+      text-align: center;
+      text-transform: uppercase;
+      color: $white-color;
+
+      @include breakpoint(large) {
+         margin-bottom: rem(27px);
+
+         text-align: start;
+      }
+   }
+
+   &__bio {
+      margin-bottom: rem(40px);
+      text-align: center;
+      color: $light-color;
+
+      @include breakpoint(large) {
+         width: rem(444px);
+         margin-bottom: rem(120px);
+
+         text-align: start;
+      }
+   }
+
+   &__dots {
+      order: 1;
+      margin-inline: auto;
+      margin-bottom: rem(32px);
+
+      @include breakpoint(small) {
+         order: unset;
+      }
+
+      @include breakpoint(large) {
+         margin-inline: unset;
+      }
+   }
+
+   &__image-container {
+      order: 1;
+      height: rem(323px);
+
+      @include breakpoint(small) {
+         order: unset;
+         flex: 1;
+      }
+
+      @include breakpoint(large) {
+         //  position: relative;
+         height: 100%;
+      }
+   }
+
+   &__image {
+      height: 100%;
+      margin-inline: auto;
+
+      @include breakpoint(large) {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         margin: unset;
+         height: 80vh;
+         max-height: rem(878px);
+      }
+   }
+}
