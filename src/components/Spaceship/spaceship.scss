@@ -1,8 +1,13 @@
 @use '../../styles/index.scss' as *;
 
 .spaceship {
-   @include breakpoint(large) {
-      display: flex;
+   display: none;
+
+   &.active {
+      display: block;
+      @include breakpoint(large) {
+         display: flex;
+      }
    }
 
    &__image {
@@ -34,13 +39,23 @@
 
    &__numbers {
       margin-bottom: rem(26px);
-      background-color: aqua;
 
       @include breakpoint(small) {
          margin-bottom: rem(44px);
       }
 
       @include breakpoint(large) {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         margin-bottom: unset;
+         height: 100%;
+      }
+   }
+
+   &__text {
+      @include breakpoint(large) {
+         width: rem(450px);
       }
    }
 
@@ -66,7 +81,7 @@
          order: 1;
          column-gap: rem(60px);
          min-width: unset;
-         align-items: center;
+         align-items: flex-end;
       }
    }
 

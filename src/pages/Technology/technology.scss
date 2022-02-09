@@ -18,5 +18,55 @@
    & .wrapper {
       min-height: unset;
       padding-bottom: 0;
+
+      & > .page-heading {
+         margin-bottom: 0;
+      }
+   }
+
+   &__number {
+      width: rem(40px);
+      height: rem(40px);
+      margin-right: rem(16px);
+      background-color: transparent;
+      border-radius: 50%;
+      border: solid rem(1px) $white-alpha25-color;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: $bellefair;
+      font-size: rem(20px);
+      line-height: rem(23px);
+      letter-spacing: rem(1.25px);
+      font-weight: 400;
+      color: $white-color;
+
+      &:last-child {
+         margin-right: unset;
+      }
+
+      @include breakpoint(small) {
+         width: rem(60px);
+         height: rem(60px);
+         font-size: rem(32px);
+         line-height: rem(37px);
+         letter-spacing: rem(2px);
+      }
+
+      @include breakpoint(large) {
+         width: rem(80px);
+         height: rem(80px);
+         margin-right: unset;
+         margin-bottom: rem(32px);
+
+         &:last-child {
+            margin-bottom: unset;
+         }
+      }
+
+      &.active {
+         background-color: $white-color;
+         border: none;
+         color: $dark-color;
+      }
    }
 }

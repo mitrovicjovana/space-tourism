@@ -6,6 +6,7 @@
    width: 100%;
    height: $header-height;
    background-color: rgba($color: #fff, $alpha: 0.2);
+   z-index: 1;
 
    & > a {
       color: white;
