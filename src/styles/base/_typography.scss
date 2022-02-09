@@ -147,6 +147,7 @@ p {
    line-height: rem(16.8px);
    letter-spacing: rem(2.3625px);
    font-weight: 300;
+   text-transform: uppercase;
 
    @include breakpoint(small) {
       font-size: rem(16px);

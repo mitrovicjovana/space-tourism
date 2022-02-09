@@ -77,7 +77,7 @@
       color: $light-color;
 
       @include breakpoint(large) {
-         max-width: rem(444px);
+         max-width: rem(424px);
          text-align: start;
       }
    }
