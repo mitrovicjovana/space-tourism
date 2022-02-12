@@ -2,6 +2,7 @@
 
 .destination {
    width: 100%;
+   padding-bottom: rem(32px);
    background-image: url('../../assets/images/destination/background-destination-mobile.jpg');
    background-position: center;
    background-size: cover;
@@ -36,14 +37,36 @@
    }
 
    &__list-item {
+      position: relative;
+      padding-bottom: rem(16px);
       border: none;
       background-color: transparent;
       text-transform: uppercase;
       color: $light-color;
       cursor: pointer;
 
+      &:hover::after {
+         content: '';
+         position: absolute;
+         width: 100%;
+         height: rem(3px);
+         bottom: 0;
+         left: 0;
+         background-color: $white-alpha25-color;
+      }
+
       &.active {
          color: $white-color;
+
+         &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: rem(3px);
+            bottom: 0;
+            left: 0;
+            background-color: $white-color;
+         }
       }
    }
 }

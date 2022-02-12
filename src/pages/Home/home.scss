@@ -17,8 +17,16 @@
    }
 
    & .wrapper {
+      height: 100%;
+      row-gap: rem(60px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: calc($header-height + rem(16px));
+
       @include breakpoint(large) {
          flex-direction: row;
+         padding-bottom: 5vh;
       }
 
       @include breakpoint(xlarge) {
@@ -27,8 +35,6 @@
    }
 
    &__info {
-      margin-top: rem(36px);
-
       @include breakpoint(small) {
          width: rem(450px);
       }
@@ -38,7 +44,6 @@
          flex-direction: column;
          justify-content: flex-end;
          height: 100%;
-         margin-bottom: rem(16px);
       }
    }
 
@@ -84,12 +89,12 @@
 
    &__explore {
       display: flex;
-      flex: 1;
       align-items: flex-end;
       justify-content: center;
 
       @include breakpoint(large) {
          height: 100%;
+         flex: 1;
          justify-content: flex-end;
       }
 

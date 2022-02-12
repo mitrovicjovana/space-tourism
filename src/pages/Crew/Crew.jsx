@@ -23,11 +23,13 @@ const Crew = () => {
 
    return (
       <section className="crew">
-         <div className="wrapper">
-            <h5 className="page-heading heading">
+         <div className="page-heading">
+            <h5 className="heading">
                <span>02</span>
                Meet your crew
             </h5>
+         </div>
+         <div className="wrapper">
             {crew.map(({ name, image, role, bio }, index) => (
                <CrewMember
                   key={index}

@@ -16,12 +16,6 @@
    }
 
    & .wrapper {
-      min-height: unset;
-      padding-bottom: 0;
-
-      & > .page-heading {
-         margin-bottom: 0;
-      }
    }
 
    &__number {
@@ -42,6 +36,10 @@
 
       &:last-child {
          margin-right: unset;
+      }
+
+      &:hover {
+         border-color: $white-color;
       }
 
       @include breakpoint(small) {

@@ -13,11 +13,13 @@ const Destination = () => {
 
    return (
       <section className="destination">
-         <div className="wrapper">
-            <h5 className="page-heading heading">
+         <div className="page-heading">
+            <h5 className="heading">
                <span>01</span>
                Pick your destination
             </h5>
+         </div>
+         <div className="wrapper">
             {destinations.map(({ name, image, description, distance, travel }, index) => (
                <Planet
                   key={index}

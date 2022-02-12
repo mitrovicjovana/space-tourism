@@ -2,7 +2,7 @@
 
 .header {
    display: flex;
-   position: fixed;
+   position: absolute;
    top: 0;
    width: 100%;
    height: $header-height;
@@ -94,6 +94,10 @@
          width: 70%;
          min-width: rem(732px);
          max-width: unset;
+         padding: 0 5%;
+      }
+
+      @include breakpoint(xlarge) {
          padding: 0 8%;
       }
 
@@ -110,13 +114,21 @@
 
          & .nav-item {
             position: relative;
-            color: white;
+            color: $white-color;
 
             @include breakpoint-down(xsmall) {
                margin-bottom: rem(32px);
                padding-left: rem(32px);
                width: 100%;
                display: block;
+
+               &:hover::after {
+                  position: absolute;
+                  width: rem(3px);
+                  height: 100%;
+                  left: 0;
+                  background-color: $white-alpha5-color;
+               }
 
                &.active::after {
                   content: '';
@@ -132,6 +144,16 @@
                display: block;
                height: 100%;
                padding-top: rem(36px);
+
+               &:hover::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: rem(3px);
+                  bottom: 0;
+                  left: 0;
+                  background-color: $white-alpha5-color;
+               }
 
                &.active::after {
                   content: '';
