@@ -1,15 +1,227 @@
 @use '../../styles/index.scss' as *;
 
 .header {
-   position: absolute;
+   display: flex;
+   position: fixed;
    top: 0;
    width: 100%;
    height: $header-height;
-   background-color: rgba($color: #fff, $alpha: 0.2);
    z-index: 1;
 
-   & > a {
-      color: white;
-      margin: 20px;
+   @include breakpoint(small) {
+      justify-content: space-between;
+   }
+
+   @include breakpoint(large) {
+      margin-top: $header-margin-top;
+   }
+
+   &.home-opened {
+      & .header__static::after {
+         width: 0;
+         animation: header-line $header-open-duration
+            calc($fade-animation-duration + $header-open-duration) ease forwards;
+      }
+
+      & .header__logo {
+         animation: fade-in-left $fade-animation-duration ease-in forwards;
+      }
+
+      & .header__nav {
+         transform: translateX(100%);
+         animation: slide-in-right $header-open-duration $fade-animation-duration ease forwards;
+
+         &--items {
+            opacity: 0;
+            animation: fade-in $fade-animation-duration
+               calc($fade-animation-duration + $header-open-duration) ease forwards;
+         }
+      }
+
+      @include breakpoint-down(xsmall) {
+         & .nav-btn {
+            animation: fade-in-rigth $fade-animation-duration ease-in forwards;
+         }
+
+         & .header__nav {
+            transform: translateX(100%);
+            animation: slide-in-right $header-open-duration ease forwards;
+
+            &--items {
+               opacity: 0;
+               animation: fade-in $fade-animation-duration $fade-animation-duration ease forwards;
+            }
+         }
+      }
+   }
+
+   &.home-collapsed {
+      display: none;
+   }
+
+   &__static {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-inline: 5%;
+
+      @include breakpoint(small) {
+         width: 40%;
+      }
+
+      @include breakpoint(large) {
+         position: relative;
+
+         &::after {
+            content: '';
+            position: absolute;
+            overflow-x: hidden;
+            width: 80%;
+            height: rem(1px);
+            background-color: $white-alpha25-color;
+            left: 38%;
+            bottom: 50%;
+            z-index: 3;
+         }
+      }
+
+      & > a {
+         margin-block: auto;
+         width: rem(40px);
+         height: rem(40px);
+      }
+
+      & > button {
+         display: none;
+
+         @include breakpoint-down(xsmall) {
+            display: block;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            z-index: 2;
+         }
+      }
+   }
+
+   &__nav {
+      background-color: $white-alpha17-color;
+      backdrop-filter: blur(1rem);
+
+      @include breakpoint-down(xsmall) {
+         &--opened {
+            display: block;
+            position: fixed;
+            inset: 0 0 0 35%;
+            transform: translateX(100%);
+            animation: slide-in-right $header-open-duration ease forwards;
+
+            &.collapsing {
+               animation: slide-out-right $header-open-duration ease forwards !important;
+            }
+         }
+
+         &--collapsed {
+            display: none;
+         }
+      }
+
+      @include breakpoint(small) {
+         width: 100%;
+         max-width: rem(612px);
+      }
+
+      @include breakpoint(large) {
+         width: 70%;
+         min-width: rem(732px);
+         max-width: unset;
+         padding: 0 5%;
+      }
+
+      @include breakpoint(xlarge) {
+         padding: 0 8%;
+      }
+
+      &--items {
+         @include breakpoint-down(xsmall) {
+            margin-top: $header-height;
+            opacity: 0;
+            animation: fade-in $fade-animation-duration $fade-animation-duration ease forwards;
+         }
+
+         @include breakpoint(small) {
+            display: flex;
+            justify-content: space-evenly;
+            height: 100%;
+         }
+
+         & .nav-item {
+            position: relative;
+            color: $white-color;
+
+            @include breakpoint-down(xsmall) {
+               margin-bottom: rem(32px);
+               padding-left: rem(32px);
+               width: 100%;
+               display: block;
+
+               &:hover::after {
+                  position: absolute;
+                  width: rem(3px);
+                  height: 100%;
+                  left: 0;
+                  background-color: $white-alpha5-color;
+               }
+
+               &.active::after {
+                  content: '';
+                  position: absolute;
+                  width: rem(3px);
+                  height: 100%;
+                  left: 0;
+                  background-color: $white-color;
+               }
+            }
+
+            @include breakpoint(small) {
+               display: block;
+               height: 100%;
+               padding-top: rem(36px);
+
+               &:hover::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: rem(3px);
+                  bottom: 0;
+                  left: 0;
+                  background-color: $white-alpha5-color;
+               }
+
+               &.active::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: rem(3px);
+                  bottom: 0;
+                  left: 0;
+                  background-color: $white-color;
+               }
+            }
+
+            & > span {
+               margin-right: rem(16px);
+               font-weight: 700;
+
+               @include breakpoint(small) {
+                  display: none;
+               }
+
+               @include breakpoint(large) {
+                  display: initial;
+               }
+            }
+         }
+      }
    }
 }

@@ -1,8 +1,10 @@
 @use '../../styles/index.scss' as *;
 
 .home {
-   width: 100%;
-   height: 100vh;
+   // width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    background-image: url('../../assets/images/home/background-home-mobile.jpg');
    background-position: center;
    background-size: cover;
@@ -13,12 +15,21 @@
    }
 
    @include breakpoint(large) {
+      height: 100vh;
       background-image: url('../../assets/images/home/background-home-desktop.jpg');
    }
 
    & .wrapper {
+      height: 100%;
+      row-gap: rem(60px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: calc($header-height + rem(16px));
+
       @include breakpoint(large) {
          flex-direction: row;
+         padding-bottom: 5vh;
       }
 
       @include breakpoint(xlarge) {
@@ -27,7 +38,7 @@
    }
 
    &__info {
-      margin-top: rem(36px);
+      animation: fade-in-left $fade-animation-duration ease-in forwards;
 
       @include breakpoint(small) {
          width: rem(450px);
@@ -38,7 +49,6 @@
          flex-direction: column;
          justify-content: flex-end;
          height: 100%;
-         margin-bottom: rem(16px);
       }
    }
 
@@ -84,12 +94,12 @@
 
    &__explore {
       display: flex;
-      flex: 1;
       align-items: flex-end;
       justify-content: center;
 
       @include breakpoint(large) {
          height: 100%;
+         flex: 1;
          justify-content: flex-end;
       }
 
@@ -117,6 +127,7 @@
          @include breakpoint(small) {
             width: rem(242px);
             height: rem(242px);
+            margin: rem(32px);
             font-size: rem(32px);
             line-height: rem(37px);
             letter-spacing: rem(2px);

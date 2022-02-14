@@ -1,6 +1,8 @@
 @use '../../styles/index.scss' as *;
 
 .crew {
+   display: flex;
+   flex-direction: column;
    width: 100%;
    background-image: url('../../assets/images/crew/background-crew-mobile.jpg');
    background-position: center;
@@ -12,17 +14,13 @@
    }
 
    @include breakpoint(large) {
+      justify-content: space-between;
       background-image: url('../../assets/images/crew/background-crew-desktop.jpg');
    }
 
    & .wrapper {
-      @include breakpoint(small) {
-         padding-bottom: 0;
-      }
-
       @include breakpoint(large) {
          position: relative;
-         height: 100vh;
       }
    }
 

@@ -2,75 +2,93 @@
 @use './functions' as *;
 @use './variables' as *;
 
+section {
+   min-height: 100vh;
+}
+
 .wrapper {
    margin: 0 auto;
    display: flex;
-   flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top: calc($header-height + 3vh);
-   padding-bottom: 3vh;
    width: 92%;
    min-width: rem(270px);
    max-width: rem(420px);
-   min-height: 100vh;
 
    @include breakpoint(small) {
       width: 90%;
       min-width: rem(420px);
       max-width: rem(800px);
-      padding-top: calc($header-height + 4vh);
-      padding-bottom: 4vh;
    }
 
    @include breakpoint(medium) {
       min-width: rem(800px);
       max-width: rem(970px);
-      padding-top: calc($header-height + 5vh);
-      padding-bottom: 5vh;
    }
 
    @include breakpoint(large) {
       width: 88%;
       min-width: rem(970px);
       max-width: rem(1200px);
-      padding-top: calc($header-height + 8vh);
-      padding-bottom: 8vh;
    }
 
    @include breakpoint(xlarge) {
       max-width: rem(1400px);
-      padding-top: calc($header-height + 10vh);
-      padding-bottom: 10vh;
    }
 }
 
 .page-heading {
-   margin-bottom: rem(32px);
-   width: 100%;
-   text-transform: uppercase;
-   color: $white-color;
-   text-align: center;
+   margin: 0 auto;
+   width: 92%;
+   min-width: rem(270px);
+   max-width: rem(420px);
+   padding-top: calc($header-height + rem(16px));
+   padding-bottom: rem(32px);
 
    @include breakpoint(small) {
-      margin-bottom: rem(60px);
-      text-align: start;
+      width: 90%;
+      min-width: rem(420px);
+      max-width: rem(800px);
+      padding-top: calc($header-height + rem(32px));
+      padding-bottom: rem(60px);
+   }
+
+   @include breakpoint(medium) {
+      min-width: rem(800px);
+      max-width: rem(970px);
    }
 
    @include breakpoint(large) {
-      margin-bottom: rem(64px);
+      width: 88%;
+      min-width: rem(970px);
+      max-width: rem(1200px);
+      padding-top: calc($header-height + $header-margin-top + rem(32px));
    }
 
-   & > span {
-      margin-right: rem(18px);
-      color: $white-alpha25-color;
+   @include breakpoint(xlarge) {
+      max-width: rem(1400px);
+   }
+
+   & > h5 {
+      width: 100%;
+      text-transform: uppercase;
+      color: $white-color;
+      text-align: center;
 
       @include breakpoint(small) {
-         margin-right: rem(19px);
+         text-align: start;
       }
 
-      @include breakpoint(large) {
-         margin-right: rem(28px);
+      & > span {
+         margin-right: rem(18px);
+         color: $white-alpha25-color;
+
+         @include breakpoint(small) {
+            margin-right: rem(19px);
+         }
+
+         @include breakpoint(large) {
+            margin-right: rem(28px);
+         }
       }
    }
 }

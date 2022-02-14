@@ -5,8 +5,18 @@
 
    &.active {
       display: block;
+
       @include breakpoint(large) {
          display: flex;
+      }
+
+      & .wrapper {
+         flex-direction: column;
+         align-items: center;
+
+         @include breakpoint(large) {
+            flex-direction: row;
+         }
       }
    }
 
@@ -47,13 +57,15 @@
       @include breakpoint(large) {
          display: flex;
          flex-direction: column;
-         justify-content: flex-end;
+         justify-content: center;
          margin-bottom: unset;
          height: 100%;
       }
    }
 
    &__text {
+      padding-bottom: rem(32px);
+
       @include breakpoint(large) {
          width: rem(450px);
       }

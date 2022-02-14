@@ -1,0 +1,61 @@
+@use './functions';
+
+@keyframes fade-in-left {
+   0% {
+      opacity: 0;
+      transform: translateX(-60px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes fade-in-rigth {
+   0% {
+      opacity: 0;
+      transform: translateX(60px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes slide-in-right {
+   0% {
+      transform: translateX(100%);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+
+@keyframes slide-out-right {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(100%);
+   }
+}
+
+@keyframes fade-in {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes header-line {
+   0% {
+      width: 0;
+      opacity: 0;
+   }
+   100% {
+      width: 80%;
+      opacity: 1;
+   }
+}
