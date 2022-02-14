@@ -64,6 +64,10 @@ section {
       padding-top: calc($header-height + $header-margin-top + rem(32px));
    }
 
+   @include breakpoint(xlarge) {
+      max-width: rem(1400px);
+   }
+
    & > h5 {
       width: 100%;
       text-transform: uppercase;

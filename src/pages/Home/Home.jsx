@@ -1,6 +1,9 @@
+import { useNavbar } from '../../hooks'
 import './home.scss'
 
 const Home = () => {
+   const { openNavHome } = useNavbar()
+
    return (
       <section className="home">
          <div className="wrapper">
@@ -16,12 +19,7 @@ const Home = () => {
                </p>
             </div>
             <div className="home__explore">
-               <button
-                  className="home__explore--btn"
-                  onClick={() => {
-                     console.log('explore')
-                  }}
-               >
+               <button className="home__explore--btn" onClick={openNavHome}>
                   Explore
                </button>
             </div>

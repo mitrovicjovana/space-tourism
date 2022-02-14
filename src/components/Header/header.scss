@@ -2,7 +2,7 @@
 
 .header {
    display: flex;
-   position: absolute;
+   position: fixed;
    top: 0;
    width: 100%;
    height: $header-height;
@@ -14,6 +14,49 @@
 
    @include breakpoint(large) {
       margin-top: $header-margin-top;
+   }
+
+   &.home-opened {
+      & .header__static::after {
+         width: 0;
+         animation: header-line $header-open-duration
+            calc($fade-animation-duration + $header-open-duration) ease forwards;
+      }
+
+      & .header__logo {
+         animation: fade-in-left $fade-animation-duration ease-in forwards;
+      }
+
+      & .header__nav {
+         transform: translateX(100%);
+         animation: slide-in-right $header-open-duration $fade-animation-duration ease forwards;
+
+         &--items {
+            opacity: 0;
+            animation: fade-in $fade-animation-duration
+               calc($fade-animation-duration + $header-open-duration) ease forwards;
+         }
+      }
+
+      @include breakpoint-down(xsmall) {
+         & .nav-btn {
+            animation: fade-in-rigth $fade-animation-duration ease-in forwards;
+         }
+
+         & .header__nav {
+            transform: translateX(100%);
+            animation: slide-in-right $header-open-duration ease forwards;
+
+            &--items {
+               opacity: 0;
+               animation: fade-in $fade-animation-duration $fade-animation-duration ease forwards;
+            }
+         }
+      }
+   }
+
+   &.home-collapsed {
+      display: none;
    }
 
    &__static {
@@ -32,6 +75,7 @@
          &::after {
             content: '';
             position: absolute;
+            overflow-x: hidden;
             width: 80%;
             height: rem(1px);
             background-color: $white-alpha25-color;
@@ -60,15 +104,6 @@
       }
    }
 
-   &__logo {
-   }
-
-   & .nav-close {
-   }
-
-   & .nav-open {
-   }
-
    &__nav {
       background-color: $white-alpha17-color;
       backdrop-filter: blur(1rem);
@@ -78,6 +113,12 @@
             display: block;
             position: fixed;
             inset: 0 0 0 35%;
+            transform: translateX(100%);
+            animation: slide-in-right $header-open-duration ease forwards;
+
+            &.collapsing {
+               animation: slide-out-right $header-open-duration ease forwards !important;
+            }
          }
 
          &--collapsed {
@@ -104,6 +145,8 @@
       &--items {
          @include breakpoint-down(xsmall) {
             margin-top: $header-height;
+            opacity: 0;
+            animation: fade-in $fade-animation-duration $fade-animation-duration ease forwards;
          }
 
          @include breakpoint(small) {

@@ -38,6 +38,10 @@ $breakpoints-down: (
    'large': rem(1339px),
 );
 
+// Animation duration
+$fade-animation-duration: 1s;
+$header-open-duration: 1.2s;
+
 // Misc
 $header-height: rem(96px);
 $header-margin-top: rem(40px);
