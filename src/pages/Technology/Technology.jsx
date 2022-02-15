@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useAxios } from '../../hooks'
+import { PATH } from '../../router'
 import { Spaceship } from '../../components'
 import './technology.scss'
 
-import { technology } from '../../assets/data'
-
 const Technology = () => {
+   const technology = useAxios(PATH.technology)
+
    const [activeSlide, setActiveSlide] = useState(0)
 
    const changeActiveSlide = active => {
@@ -19,11 +21,12 @@ const Technology = () => {
                Space launch 101
             </h5>
          </div>
-         {technology.map(({ name, images, description, isActive }, index) => (
+         {technology.map(({ name, imagePortrait, imageLandscape, description }, index) => (
             <Spaceship
                key={index}
                name={name}
-               images={images}
+               imagePortrait={imagePortrait}
+               imageLandscape={imageLandscape}
                description={description}
                isActive={index === activeSlide}
             >

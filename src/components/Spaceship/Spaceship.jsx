@@ -1,11 +1,11 @@
 import './spaceship.scss'
 
-const Spaceship = ({ children, name, images: { portrait, landscape }, description, isActive }) => {
+const Spaceship = ({ children, name, imagePortrait, imageLandscape, description, isActive }) => {
    return (
       <div className={`spaceship${isActive === true ? ' active' : ''}`}>
          <picture className="spaceship__image">
-            <source media="(min-width:1024px)" srcSet={portrait} />
-            <img className="spaceship__image" src={landscape} alt={name} />
+            <source media="(min-width:1024px)" srcSet={imagePortrait} />
+            <img className="spaceship__image" src={imageLandscape} alt={name} />
          </picture>
          <div className="wrapper">
             <div className="spaceship__numbers">{children}</div>
