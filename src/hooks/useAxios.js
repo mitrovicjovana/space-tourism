@@ -7,7 +7,6 @@ const useAxios = path => {
    useEffect(() => {
       getData(path)
          .then(res => setData(res.data))
-         .catch(err => console.log(err))
    }, [])
 
    return data

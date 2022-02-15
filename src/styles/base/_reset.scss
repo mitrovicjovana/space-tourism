@@ -36,3 +36,11 @@ h6 {
    cursor: default;
    line-height: 1.5;
 }
+
+a,
+button {
+   &:active,
+   &:focus {
+      -webkit-tap-highlight-color: transparent;
+   }
+}
