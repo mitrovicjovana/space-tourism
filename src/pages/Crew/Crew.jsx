@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useAxios } from '../../hooks'
+import { PATH } from '../../router'
 import { CrewMember } from '../../components'
 import './crew.scss'
 
-import { crew } from '../../assets/data'
-
 const Crew = () => {
+   const crew = useAxios(PATH.crew)
    const [activeSlide, setActiveSlide] = useState(0)
 
    useEffect(() => {

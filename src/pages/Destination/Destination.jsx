@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useAxios } from '../../hooks'
+import { PATH } from '../../router'
 import { Planet } from '../../components'
 import './destination.scss'
 
-import { destinations } from '../../assets/data'
-
 const Destination = () => {
+   const destinations = useAxios(PATH.destination)
+
    const [activeTab, setActiveTab] = useState(0)
 
    const changeActiveTab = active => {
@@ -20,14 +22,14 @@ const Destination = () => {
             </h5>
          </div>
          <div className="wrapper">
-            {destinations.map(({ name, image, description, distance, travel }, index) => (
+            {destinations.map(({ name, image, description, distance, travelTime }, index) => (
                <Planet
                   key={index}
                   name={name}
                   image={image}
                   description={description}
                   distance={distance}
-                  travel={travel}
+                  travelTime={travelTime}
                   isActive={index === activeTab}
                >
                   <div className="destination__list">

@@ -1,6 +1,6 @@
 import './planet.scss'
 
-const Planet = ({ children, name, image, description, distance, travel, isActive }) => {
+const Planet = ({ children, name, image, description, distance, travelTime, isActive }) => {
    return (
       <div className={`planet${isActive === true ? ' active' : ''}`}>
          <img src={image} alt={name} className="planet__img" />
@@ -16,7 +16,7 @@ const Planet = ({ children, name, image, description, distance, travel, isActive
                   </div>
                   <div className="planet__details--section">
                      <h6>Est. travel time</h6>
-                     <h5 className="subheading">{travel}</h5>
+                     <h5 className="subheading">{travelTime}</h5>
                   </div>
                </div>
             </div>
