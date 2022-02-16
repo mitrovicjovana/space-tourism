@@ -45,13 +45,18 @@
       color: $light-color;
       cursor: pointer;
 
-      &:hover::after {
+      &::after {
          content: '';
          position: absolute;
-         width: 100%;
+         width: 0;
          height: rem(3px);
          bottom: 0;
          left: 0;
+         transition: width 0.5s;
+      }
+
+      &:hover::after {
+         width: 100%;
          background-color: $white-alpha25-color;
       }
 
@@ -59,12 +64,7 @@
          color: $white-color;
 
          &::after {
-            content: '';
-            position: absolute;
             width: 100%;
-            height: rem(3px);
-            bottom: 0;
-            left: 0;
             background-color: $white-color;
          }
       }

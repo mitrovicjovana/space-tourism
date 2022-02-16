@@ -1,26 +1,11 @@
-import { useState, useEffect } from 'react'
-import { useAxios } from '../../hooks'
+import { useAxios, useSlider } from '../../hooks'
 import { PATH } from '../../router'
-import { CrewMember } from '../../components'
+import { CrewMember, Loader } from '../../components'
 import './crew.scss'
 
 const Crew = () => {
-   const crew = useAxios(PATH.crew)
-   const [activeSlide, setActiveSlide] = useState(0)
-
-   useEffect(() => {
-      const time = setInterval(() => {
-         activeSlide === crew.length - 1
-            ? setActiveSlide(0)
-            : setActiveSlide(prevSlide => prevSlide + 1)
-      }, 7000)
-
-      return () => clearInterval(time)
-   }, [activeSlide])
-
-   const changeActiveSlide = active => {
-      setActiveSlide(active)
-   }
+   const [crew, isLoading] = useAxios(PATH.crew)
+   const { activeSlide, changeActiveSlide } = useSlider(crew, 7000)
 
    return (
       <section className="crew">
@@ -30,28 +15,32 @@ const Crew = () => {
                Meet your crew
             </h5>
          </div>
-         <div className="wrapper">
-            {crew.map(({ name, image, role, bio }, index) => (
-               <CrewMember
-                  key={index}
-                  name={name}
-                  image={image}
-                  role={role}
-                  bio={bio}
-                  isActive={index === activeSlide}
-               >
-                  {crew.map((_, order) => (
-                     <button
-                        key={order}
-                        className={`dot${order === activeSlide ? ' active' : ''}`}
-                        onClick={() => {
-                           changeActiveSlide(order)
-                        }}
-                     />
-                  ))}
-               </CrewMember>
-            ))}
-         </div>
+         {isLoading ? (
+            <Loader />
+         ) : (
+            <div className="wrapper">
+               {crew.map(({ name, image, role, bio }, index) => (
+                  <CrewMember
+                     key={index}
+                     name={name}
+                     image={image}
+                     role={role}
+                     bio={bio}
+                     isActive={index === activeSlide}
+                  >
+                     {crew.map((_, order) => (
+                        <button
+                           key={order}
+                           className={`dot${order === activeSlide ? ' active' : ''}`}
+                           onClick={() => {
+                              changeActiveSlide(order)
+                           }}
+                        />
+                     ))}
+                  </CrewMember>
+               ))}
+            </div>
+         )}
       </section>
    )
 }

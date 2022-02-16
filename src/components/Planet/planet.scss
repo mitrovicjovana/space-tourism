@@ -20,6 +20,7 @@
       height: rem(170px);
       margin-bottom: rem(26px);
       object-fit: contain;
+      animation: fade-in-left $slide-animation-duration ease forwards;
 
       @include breakpoint(small) {
          width: rem(300px);
@@ -35,12 +36,15 @@
    }
 
    &__description {
+      animation: fade-in-left $slide-animation-duration ease forwards;
+
       @include breakpoint(small) {
          max-width: rem(753px);
       }
 
       @include breakpoint(large) {
          max-width: (445px);
+         animation: fade-in-rigth $slide-animation-duration ease forwards;
       }
 
       &--heading {

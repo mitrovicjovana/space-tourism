@@ -1,0 +1,72 @@
+@use '../../styles/index.scss' as *;
+
+.loader {
+   position: absolute;
+   bottom: 40%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+
+   &__dot {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $white-alpha25-color;
+      color: $white-alpha25-color;
+
+      &::before,
+      &::after {
+         content: '';
+         display: inline-block;
+         position: absolute;
+         top: 0;
+      }
+
+      &::before {
+         left: -25px;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background-color: $white-alpha25-color;
+         color: $white-alpha25-color;
+         animation: dotCollisionBefore 2s infinite ease-in;
+      }
+
+      &::after {
+         left: 25px;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background-color: $white-alpha25-color;
+         color: $white-alpha25-color;
+         animation: dotCollisionAfter 2s infinite ease-in;
+         animation-delay: 1s;
+      }
+   }
+}
+
+@keyframes dotCollisionBefore {
+   0%,
+   50%,
+   75%,
+   100% {
+      transform: translateX(0);
+   }
+   25% {
+      transform: translateX(-30px);
+   }
+}
+
+@keyframes dotCollisionAfter {
+   0%,
+   50%,
+   75%,
+   100% {
+      transform: translateX(0);
+   }
+   25% {
+      transform: translateX(30px);
+   }
+}

@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import { useAxios } from '../../hooks'
+import { useAxios, useSlider } from '../../hooks'
 import { PATH } from '../../router'
-import { Spaceship } from '../../components'
+import { Loader, Spaceship } from '../../components'
 import './technology.scss'
 
 const Technology = () => {
-   const technology = useAxios(PATH.technology)
-
-   const [activeSlide, setActiveSlide] = useState(0)
-
-   const changeActiveSlide = active => {
-      setActiveSlide(active)
-   }
+   const [technology, isLoading] = useAxios(PATH.technology)
+   const { activeSlide, changeActiveSlide } = useSlider()
 
    return (
       <section className="technology">
@@ -21,26 +15,30 @@ const Technology = () => {
                Space launch 101
             </h5>
          </div>
-         {technology.map(({ name, imagePortrait, imageLandscape, description }, index) => (
-            <Spaceship
-               key={index}
-               name={name}
-               imagePortrait={imagePortrait}
-               imageLandscape={imageLandscape}
-               description={description}
-               isActive={index === activeSlide}
-            >
-               {technology.map((_, order) => (
-                  <button
-                     key={order}
-                     className={`technology__number${order === activeSlide ? ' active' : ''}`}
-                     onClick={() => changeActiveSlide(order)}
-                  >
-                     {order + 1}
-                  </button>
-               ))}
-            </Spaceship>
-         ))}
+         {isLoading ? (
+            <Loader />
+         ) : (
+            technology.map(({ name, imagePortrait, imageLandscape, description }, index) => (
+               <Spaceship
+                  key={index}
+                  name={name}
+                  imagePortrait={imagePortrait}
+                  imageLandscape={imageLandscape}
+                  description={description}
+                  isActive={index === activeSlide}
+               >
+                  {technology.map((_, order) => (
+                     <button
+                        key={order}
+                        className={`technology__number${order === activeSlide ? ' active' : ''}`}
+                        onClick={() => changeActiveSlide(order)}
+                     >
+                        {order + 1}
+                     </button>
+                  ))}
+               </Spaceship>
+            ))
+         )}
       </section>
    )
 }

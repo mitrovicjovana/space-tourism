@@ -1,7 +1,6 @@
 @use '../../styles/index.scss' as *;
 
 .home {
-   // width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -110,7 +109,7 @@
          border: none;
          border-radius: 50%;
          background-color: $white-color;
-         outline-color: $white-alpha25-color;
+         outline: solid $white-alpha25-color 0;
          cursor: pointer;
          text-transform: uppercase;
          font-family: $bellefair;
@@ -118,10 +117,10 @@
          line-height: rem(23px);
          letter-spacing: rem(1.25px);
          font-weight: 400;
+         transition: outline ease-in 0.7s;
 
          &:hover {
             outline: solid $white-alpha25-color rem(24px);
-            transition: outline ease-in 0.7s;
          }
 
          @include breakpoint(small) {
@@ -134,7 +133,6 @@
 
             &:hover {
                outline: solid $white-alpha25-color rem(36px);
-               transition: outline ease-in 0.7s;
             }
          }
 
@@ -144,7 +142,6 @@
 
             &:hover {
                outline: solid $white-alpha25-color rem(48px);
-               transition: outline ease-in 0.7s;
             }
          }
       }

@@ -65,6 +65,7 @@
 
    &__text {
       padding-bottom: rem(32px);
+      animation: fade-in-left $slide-animation-duration ease forwards;
 
       @include breakpoint(large) {
          width: rem(450px);
