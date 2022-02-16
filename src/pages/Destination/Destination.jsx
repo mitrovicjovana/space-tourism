@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import { useAxios } from '../../hooks'
+import { useAxios, useSlider } from '../../hooks'
 import { PATH } from '../../router'
 import { Planet, Loader } from '../../components'
 import './destination.scss'
 
 const Destination = () => {
    const [destinations, isLoading] = useAxios(PATH.destination)
-
-   const [activeTab, setActiveTab] = useState(0)
-
-   const changeActiveTab = active => {
-      setActiveTab(active)
-   }
+   const { activeSlide, changeActiveSlide } = useSlider()
 
    return (
       <section className="destination">
@@ -33,16 +27,16 @@ const Destination = () => {
                      description={description}
                      distance={distance}
                      travelTime={travelTime}
-                     isActive={index === activeTab}
+                     isActive={index === activeSlide}
                   >
                      <div className="destination__list">
                         {destinations.map(({ name }, index) => (
                            <button
                               key={index}
                               className={`destination__list-item nav-item${
-                                 index === activeTab ? ' active' : ''
+                                 index === activeSlide ? ' active' : ''
                               }`}
-                              onClick={() => changeActiveTab(index)}
+                              onClick={() => changeActiveSlide(index)}
                            >
                               {name}
                            </button>

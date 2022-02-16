@@ -1,26 +1,11 @@
-import { useState, useEffect } from 'react'
-import { useAxios } from '../../hooks'
+import { useAxios, useSlider } from '../../hooks'
 import { PATH } from '../../router'
 import { CrewMember, Loader } from '../../components'
 import './crew.scss'
 
 const Crew = () => {
    const [crew, isLoading] = useAxios(PATH.crew)
-   const [activeSlide, setActiveSlide] = useState(0)
-
-   useEffect(() => {
-      const time = setInterval(() => {
-         activeSlide === crew.length - 1
-            ? setActiveSlide(0)
-            : setActiveSlide(prevSlide => prevSlide + 1)
-      }, 7000)
-
-      return () => clearInterval(time)
-   }, [activeSlide])
-
-   const changeActiveSlide = active => {
-      setActiveSlide(active)
-   }
+   const { activeSlide, changeActiveSlide } = useSlider(crew, 7000)
 
    return (
       <section className="crew">

@@ -3,7 +3,7 @@ import './loader.scss'
 const Loader = () => {
    return (
       <div className="loader">
-         <div class="dot"></div>
+         <div class="loader__dot"></div>
       </div>
    )
 }

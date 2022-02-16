@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import { useAxios } from '../../hooks'
+import { useAxios, useSlider } from '../../hooks'
 import { PATH } from '../../router'
 import { Loader, Spaceship } from '../../components'
 import './technology.scss'
 
 const Technology = () => {
    const [technology, isLoading] = useAxios(PATH.technology)
-
-   const [activeSlide, setActiveSlide] = useState(0)
-
-   const changeActiveSlide = active => {
-      setActiveSlide(active)
-   }
+   const { activeSlide, changeActiveSlide } = useSlider()
 
    return (
       <section className="technology">

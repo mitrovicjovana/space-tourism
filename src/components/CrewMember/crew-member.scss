@@ -39,6 +39,7 @@
 
    &__info {
       order: 2;
+      animation: fade-in-left $slide-animation-duration ease forwards;
 
       @include breakpoint(small) {
          order: unset;
